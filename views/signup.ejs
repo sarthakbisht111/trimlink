@@ -1,26 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-        body{
-            font-family : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-        }
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Signup - TrimLink</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:#0f172a;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            padding:20px;
+        }
+
+        .card{
+            width:100%;
+            max-width:450px;
+            background:#1e293b;
+            padding:40px;
+            border-radius:20px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        h1{
+            color:white;
+            margin-bottom:10px;
+        }
+
+        .subtitle{
+            color:#94a3b8;
+            margin-bottom:30px;
+        }
+
+        form{
+            display:flex;
+            flex-direction:column;
+            gap:18px;
+        }
+
+        label{
+            color:#cbd5e1;
+            font-size:0.95rem;
+        }
+
+        input{
+            padding:14px;
+            border:none;
+            border-radius:12px;
+            background:#334155;
+            color:white;
+            font-size:1rem;
+        }
+
+        button{
+            margin-top:10px;
+            padding:14px;
+            border:none;
+            border-radius:12px;
+            background:#38bdf8;
+            color:#0f172a;
+            font-size:1rem;
+            font-weight:bold;
+            cursor:pointer;
+            transition:0.3s ease;
+        }
+
+        button:hover{
+            transform:translateY(-2px);
+            opacity:0.9;
+        }
+
+        .login-link{
+            margin-top:25px;
+            text-align:center;
+            color:#94a3b8;
+        }
+
+        .login-link a{
+            color:#38bdf8;
+            text-decoration:none;
+            font-weight:bold;
+        }
+    </style>
 </head>
 <body>
-    <h1> Signup </h1>
-    <form action="user" method="post" >
-        <label>Full Name</label>
-        <input type="text" required name ="name">
-        <label>Email</label>
-        <input type="text" required name ="email">
-        <label>Password</label>
-        <input type="text" required name ="password">
 
-        <button type="submit" >Signup</button>
-    </form>
+    <div class="card">
+        <h1>Create Account</h1>
+        <p class="subtitle">Start shortening URLs in seconds.</p>
+
+        <form action="/user" method="post" autocomplete="off">
+
+            <div>
+                <label>Full Name</label>
+                <input type="text" required name="name">
+            </div>
+
+            <div>
+                <label>Email</label>
+                <input type="email" required name="email">
+            </div>
+
+            <div>
+                <label>Password</label>
+                <input type="password" required name="password">
+            </div>
+
+            <button type="submit">Signup</button>
+        </form>
+
+        <div class="login-link">
+            Already have an account?
+            <a href="/login">Login</a>
+        </div>
+    </div>
+
 </body>
 </html>
